@@ -62,6 +62,7 @@ public:
   }
 
   void size_written(std::size_t size) {
+    (void)(size);
     assert(size == buffer_.size());
     buffer_ = sspi_context_buffer{};
   }
