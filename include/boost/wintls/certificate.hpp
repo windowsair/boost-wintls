@@ -18,7 +18,11 @@
 #include <memory>
 #include <cassert>
 
-#define WINTLS_VERIFY_MSG(cond, msg) assert((cond) && (msg))
+#if defined(NDEBUG)
+#define WINTLS_VERIFY_MSG(expr, msg) ((void)(expr))
+#else
+#define WINTLS_VERIFY_MSG(expr, msg) assert((expr) && (msg))
+#endif
 
 namespace boost {
 namespace wintls {
