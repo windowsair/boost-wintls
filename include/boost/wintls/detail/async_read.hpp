@@ -45,7 +45,7 @@ struct async_read : net::coroutine {
     detail::sspi_decrypt::state state;
     WINTLS_ASIO_CORO_REENTER(*this) {
       while((state = decrypt_(buffers_)) == detail::sspi_decrypt::state::data_needed) {
-        ASIO_CORO_YIELD {
+        WINTLS_ASIO_CORO_YIELD {
           next_layer_.async_read_some(decrypt_.input_buffer, std::move(self));
         }
         decrypt_.size_read(size_read);
