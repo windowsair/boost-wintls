@@ -10,6 +10,8 @@
 
 #include <boost/wintls/detail/sspi_types.hpp>
 
+#define WINTLS_ASSERT_MSG(cond, msg) assert((cond) && (msg))
+
 namespace boost {
 namespace wintls {
 namespace detail {
@@ -18,7 +20,7 @@ namespace sspi_functions {
 inline SecurityFunctionTable* sspi_function_table() {
   static SecurityFunctionTable* impl = InitSecurityInterface();
   // TODO: Figure out some way to signal this to the user instead of aborting
-  BOOST_ASSERT_MSG(impl != nullptr, "Unable to initialize SecurityFunctionTable");
+  WINTLS_ASSERT_MSG(impl != nullptr, "Unable to initialize SecurityFunctionTable");
   return impl;
 }
 
