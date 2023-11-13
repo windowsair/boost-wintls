@@ -46,7 +46,7 @@ using error_code = std::error_code;
 constexpr auto system_category = std::system_category;
 #else
 namespace net = boost::asio;
-using system_error = boost::system_error;
+using system_error = boost::system::system_error;
 using error_code = boost::system::error_code;
 
 constexpr auto system_category = boost::system::system_category;
