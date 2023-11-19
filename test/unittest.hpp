@@ -14,7 +14,8 @@
 #include <boost/make_shared.hpp>
 #endif
 
-#include <boost/beast/_experimental/test/stream.hpp>
+//#include <boost/beast/_experimental/test/stream.hpp>
+#include "utils/stream.hpp"
 #include <boost/asio/ssl.hpp>
 
 #include <catch2/catch.hpp>
@@ -45,6 +46,6 @@ inline std::vector<unsigned char> bytes_from_file(const std::string& path) {
 
 namespace net = boost::wintls::net;
 namespace asio_ssl = boost::asio::ssl;
-using test_stream = boost::beast::test::stream;
+using test_stream = boost::wintls::test::stream;
 
 #endif // BOOST_WINTLS_UNITTEST_HPP

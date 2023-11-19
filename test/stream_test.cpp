@@ -113,7 +113,7 @@ TEST_CASE("underlying stream errors") {
     boost::system::error_code client_ec{};
 
     SECTION("handshake error") {
-      boost::beast::test::fail_count fc(4);
+      boost::wintls::test::fail_count fc(4);
       wintls_client_stream client(io_context, fc);
 
       client.stream.next_layer().connect(server.stream.next_layer());
@@ -125,7 +125,7 @@ TEST_CASE("underlying stream errors") {
     }
 
     SECTION("failing read/write") {
-      boost::beast::test::fail_count fc(5);
+      boost::wintls::test::fail_count fc(5);
       wintls_client_stream client(io_context, fc);
 
       client.stream.next_layer().connect(server.stream.next_layer());
@@ -156,7 +156,7 @@ TEST_CASE("underlying stream errors") {
     test_server server(io_context);
 
     SECTION("handshake error") {
-      boost::beast::test::fail_count fc(4);
+      boost::wintls::test::fail_count fc(4);
       wintls_client_stream client(io_context, fc);
       client.stream.next_layer().connect(server.stream.next_layer());
       server.run();
@@ -169,7 +169,7 @@ TEST_CASE("underlying stream errors") {
     }
 
     SECTION("failing read/write") {
-      boost::beast::test::fail_count fc(5);
+      boost::wintls::test::fail_count fc(5);
       wintls_client_stream client(io_context, fc);
       client.stream.next_layer().connect(server.stream.next_layer());
       boost::asio::streambuf buffer;
