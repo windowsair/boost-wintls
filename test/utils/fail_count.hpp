@@ -64,6 +64,6 @@ public:
 } // boost
 
 
-#include "./impl/fail_count.ipp"
+#include "impl/fail_count.ipp"
 
 #endif

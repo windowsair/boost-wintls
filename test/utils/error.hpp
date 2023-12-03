@@ -10,9 +10,6 @@
 #ifndef BOOST_BEAST_TEST_ERROR_HPP
 #define BOOST_BEAST_TEST_ERROR_HPP
 
-#include <boost/config.hpp>
-#include <boost/system/system_error.hpp>
-#include <boost/system/error_code.hpp>
 
 namespace boost {
 namespace wintls {
@@ -33,7 +30,7 @@ enum class error
 } // wintls
 } // boost
 
-#include "./impl/error.ipp"
-#include "./impl/error.hpp"
+#include "impl/error.ipp"
+#include "impl/error.hpp"
 
 #endif

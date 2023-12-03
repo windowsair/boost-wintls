@@ -10,7 +10,6 @@
 #ifndef BOOST_BEAST_TEST_IMPL_ERROR_HPP
 #define BOOST_BEAST_TEST_IMPL_ERROR_HPP
 
-#include "config.hpp"
 #include <type_traits>
 
 #ifdef WINTLS_USE_STANDALONE_ASIO
