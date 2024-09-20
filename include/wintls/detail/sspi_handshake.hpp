@@ -87,7 +87,7 @@ public:
       flags |= SCH_CRED_REVOCATION_CHECK_CHAIN_EXCLUDE_ROOT;
     }
 
-    int num_creds = 0;
+    DWORD num_creds = 0;
     decltype(&server_cert) creds_list = nullptr;
 
     if (handshake_type_ == handshake_type::server && server_cert != nullptr) {
